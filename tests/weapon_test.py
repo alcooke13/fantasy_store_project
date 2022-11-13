@@ -20,3 +20,6 @@ class TestWeapon(unittest.TestCase):
 
     def test_weapon_has_price(self):
         self.assertEqual(150, self.weapon_1.price)
+
+    def test_weapon_has_id(self):
+        self.assertEqual(None, self.weapon_1.id)

@@ -21,3 +21,6 @@ class TestArmor(unittest.TestCase):
 
     def test_armor_has_price(self):
         self.assertEqual(175, self.armor_1.price)
+
+    def test_armor_has_id(self):
+        self.assertEqual(None, self.armor_1.id)

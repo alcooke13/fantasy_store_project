@@ -23,3 +23,11 @@ class TestPotion(unittest.TestCase):
 
     def test_potion_has_id(self):
         self.assertEqual(None, self.potion_1.id)
+
+    def test_potion_quantity_decreases(self):
+        self.potion_1.potion_quantity_decreases()
+        self.assertEqual(9, self.potion_1.quantity)
+
+    def test_potion_quantity_increases(self):
+        self.potion_1.potion_quantity_increases()
+        self.assertEqual(11, self.potion_1.quantity)

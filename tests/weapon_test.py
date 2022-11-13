@@ -23,3 +23,11 @@ class TestWeapon(unittest.TestCase):
 
     def test_weapon_has_id(self):
         self.assertEqual(None, self.weapon_1.id)
+
+    def test_weapon_quantity_decreases(self):
+        self.weapon_1.weapon_quantity_decreases()
+        self.assertEqual(2, self.weapon_1.quantity)
+
+    def test_weapon_quantity_increases(self):
+        self.weapon_1.weapon_quantity_increases()
+        self.assertEqual(4, self.weapon_1.quantity)

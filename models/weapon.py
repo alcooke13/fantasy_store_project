@@ -6,3 +6,9 @@ class Weapon:
         self.cost = cost
         self.price = price
         self.id = id
+
+    def weapon_quantity_decreases(self):
+        self.quantity -= 1
+
+    def weapon_quantity_increases(self):
+        self.quantity += 1

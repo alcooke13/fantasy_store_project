@@ -4,7 +4,7 @@ from models.product import Product
 
 class TestProduct(unittest.TestCase):
     def setUp(self):
-        self.product_1 = Product("Potion of healing", "testing description", 20, 35)
+        self.product_1 = Product("Potion of healing", "testing description", 20, 35, "Potion")
 
     def test_product_has_name(self):
         self.assertEqual("Potion of healing", self.product_1.name)
@@ -20,3 +20,6 @@ class TestProduct(unittest.TestCase):
 
     def test_product_has_id(self):
         self.assertEqual(None, self.product_1.id)
+
+    def test_product_has_type(self):
+        self.assertEqual("Potion", self.product_1.product_type)

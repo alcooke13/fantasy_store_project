@@ -18,7 +18,7 @@ def select(id):
     if results:
         result = results[0]
         product_type = product_type_repository.select(result["product_type_id"])
-        product = Product(result["name"], result["description"], result['cost'], result['price'], product_type, result["id"])
+        product = Product(result['name'], result['description'], result['cost'], result['price'], product_type, result["id"])
     return product
 
 def select_all():
@@ -27,7 +27,7 @@ def select_all():
     results = run_sql(sql)
     for result in results:
         product_type = product_type_repository.select(result['type_id'])
-        product = Product(result["name"], result["description"], result['cost'], result['price'], product_type, result["id"])
+        product = Product(result['name'], result['description'], result['cost'], result['price'], product_type, result["id"])
         products.append(product)
     return products
 

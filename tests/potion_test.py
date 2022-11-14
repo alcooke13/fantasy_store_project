@@ -1,33 +1,22 @@
 import unittest
 
-from models.potion import Potion
+from models.product import Product
 
-class TestPotion(unittest.TestCase):
+class TestProduct(unittest.TestCase):
     def setUp(self):
-        self.potion_1 = Potion("Potion of healing", "testing description", 10, 20, 35)
+        self.product_1 = Product("Potion of healing", "testing description", 20, 35)
 
-    def test_potion_has_name(self):
-        self.assertEqual("Potion of healing", self.potion_1.name)
+    def test_product_has_name(self):
+        self.assertEqual("Potion of healing", self.product_1.name)
 
-    def test_potion_has_description(self):
-        self.assertEqual("testing description", self.potion_1.description)
+    def test_product_has_description(self):
+        self.assertEqual("testing description", self.product_1.description)
 
-    def test_potion_has_quantity(self):
-        self.assertEqual(10, self.potion_1.quantity)
+    def test_product_has_cost(self):
+        self.assertEqual(20, self.product_1.cost)
 
-    def test_potion_has_cost(self):
-        self.assertEqual(20, self.potion_1.cost)
+    def test_product_has_price(self):
+        self.assertEqual(35, self.product_1.price)
 
-    def test_potion_has_price(self):
-        self.assertEqual(35, self.potion_1.price)
-
-    def test_potion_has_id(self):
-        self.assertEqual(None, self.potion_1.id)
-
-    def test_potion_quantity_decreases(self):
-        self.potion_1.potion_quantity_decreases()
-        self.assertEqual(9, self.potion_1.quantity)
-
-    def test_potion_quantity_increases(self):
-        self.potion_1.potion_quantity_increases()
-        self.assertEqual(11, self.potion_1.quantity)
+    def test_product_has_id(self):
+        self.assertEqual(None, self.product_1.id)

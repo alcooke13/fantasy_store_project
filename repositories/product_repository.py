@@ -31,7 +31,6 @@ def select_all():
         products.append(product)
     return products
 
-
 def delete_all():
     sql = "DELETE FROM products"
     run_sql(sql)

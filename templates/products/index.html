@@ -12,7 +12,10 @@
         <div>Description: {{ product.description }}</div>
         <div>Purchase Cost: {{ product.cost }}</div>
         <div>Selling Price: {{ product.price }}</div>
-        <div>Categorie: {{ product.product_type.name }}</div>
+        <div>Categorie: {{ product.product_type.name }}</div><br>
+        <form action="/products/{{ product.id }}/delete" method="POST">
+            <input type="submit" value="Delete">
+        </form>
         <br>
     </div>
 </section>

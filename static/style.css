@@ -1,0 +1,36 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+nav > ul{
+    display: flex;
+    justify-content: flex-start;
+    outline: red solid 2px;
+    gap: 1rem;
+}
+
+nav > ul > li {
+    list-style: none;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+h2 {
+    text-align: center;
+}
+
+.each_product {
+    outline: 2px solid blue;
+    flex-direction: column;
+    text-align: center;
+    margin: 1rem;
+}
+
+#new_product {
+    outline: 2px solid green;
+    text-align: center;
+}

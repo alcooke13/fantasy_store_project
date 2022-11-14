@@ -12,6 +12,7 @@ def save(product):
     return product
 
 def select(id):
+    product = None
     sql = "SELECT * FROM products WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)

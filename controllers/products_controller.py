@@ -34,3 +34,13 @@ def create_product():
 def delete_product(id):
     product_repository.delete(id)
     return redirect("/products")
+
+# Show a product
+# tried /products/<id> -> Gives Key error product_type_id
+# /products/product.id -> Gives Malinformed url rule
+# tried /products/product.id - > Gives 404
+
+# @products_blueprint.route("/products/<id>/show")
+# def show_book(id):
+#     product = product_repository.select(id)
+#     return render_template("products/show.html", product = product)

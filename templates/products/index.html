@@ -8,6 +8,17 @@
 
 <section>
     <div class="each_product">
+        {% if product.product_type.name == "Weapons" %}
+        <img src="{{url_for('static', filename='images/weapon_picture.jpeg')}}" align="content" id="picture"/>
+        
+        {% elif product.product_type.name == "Potions" %}
+        <img src="{{url_for('static', filename='images/potion_pic.jpeg')}}" align="content" id="picture"/>
+        
+        {% elif product.product_type.name == "Armor" %}
+        <img src="{{url_for('static', filename='images/armor_pic.png')}}" align="content" id="picture"/>
+
+        {% endif %}
+
         <div><a href="/products/{{product.id}}/show" >Product Name: {{ product.name }}</a></div>
         <div>Description: {{ product.description }}</div>
         <div>Purchase Cost: {{ product.cost }}</div>

@@ -25,12 +25,16 @@ h2 {
 
 .each_product {
     outline: 2px solid blue;
+    margin: 1rem;
     flex-direction: column;
     text-align: center;
-    margin: 1rem;
+    
 }
 
 #new_product {
     outline: 2px solid green;
     text-align: center;
+}
+#picture {
+    height: 9rem;
 }

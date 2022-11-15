@@ -16,7 +16,56 @@
             {{ product.description }}        
         </div>
         <div>
-            <!-- {% for item in product %} -->
+            {% if product.name == "Bronze Sword" %}
+            <img src="{{url_for('static', filename='/images/bronze_sword_pic.webp')}}" align="content" class="product_picture"/>
+            
+            {% elif product.name == "Silver Sword" %}
+            <img src="{{url_for('static', filename='/images/silver_sword_pic.jpeg')}}" align="content" class="product_picture"/>
+            
+            {% elif product.name == "Gold Sword" %}
+            <img src="{{url_for('static', filename='/images/gold_sword_pic.jpeg')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Bronze Axe" %}
+            <img src="{{url_for('static', filename='/images/Bronze_axe_pic.webp')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Silver Axe" %}
+            <img src="{{url_for('static', filename='/images/silver_axe_pic.webp')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Gold Axe" %}
+            <img src="{{url_for('static', filename='/images/gold_axe_pic.webp')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Bronze Spear" %}
+            <img src="{{url_for('static', filename='/images/bronze_spear_picwebp')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Silver Spear" %}
+            <img src="{{url_for('static', filename='/images/silver_spear_pic.webp')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Gold Spear" %}
+            <img src="{{url_for('static', filename='/images/gold_spear_pic.png')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Shield" %}
+            <img src="{{url_for('static', filename='/images/shield_pic.jpeg')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Health Potion" %}
+            <img src="{{url_for('static', filename='/images/health_potion_pic.png')}}" align="content" class="product_picture"/>
+            
+            {% elif product.name == "Mana Potion" %}
+            <img src="{{url_for('static', filename='/images/mana_potion_pic.png')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Strength Potion" %}
+            <img src="{{url_for('static', filename='/images/strength_potion_pic.png')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Light Armor" %}
+            <img src="{{url_for('static', filename='/images/light_armor_pic.png')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Medium Armor" %}
+            <img src="{{url_for('static', filename='/images/medium_armor_pic.png')}}" align="content" class="product_picture"/>
+
+            {% elif product.name == "Heavy Armor" %}
+            <img src="{{url_for('static', filename='/images/heavy_armor_pic.png')}}" align="content" class="product_picture"/>
+
+
+            {% endif %}
         </div>
     </div>
     

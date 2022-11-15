@@ -35,7 +35,7 @@ h2 {
     outline: 2px solid green;
     text-align: center;
 }
-#picture {
+#picture_all {
     height: 9rem;
 }
 
@@ -48,3 +48,7 @@ h2 {
     margin-top: 3rem;
 }
 
+.product_picture {
+    height: 250px;
+    width: 250px;
+}

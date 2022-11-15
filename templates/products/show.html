@@ -9,11 +9,11 @@
         <div class="single-product-items">
             <div>
                 <h3>{{ product.name }}<br></h3>
-                {{ product.product_type.name }}
+                Category: {{ product.product_type.name }}
                 <br>
-                {{ product.cost }}<br>
-                {{ product.price }}<br>
-                {{ product.description }}
+                Cost: {{ product.cost }}<br>
+                Price: {{ product.price }}<br>
+                Description: {{ product.description }}
             </div>   
                 <form action="/products/{{ product.id }}/edit">
                     <div id="edit-button">
@@ -77,5 +77,5 @@
     
 </section>
 
-</form>
+
 {% endblock %}

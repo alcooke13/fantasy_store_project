@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    STOCK LEVEL: <br>
+    Swords: {{ counter[0] }}
+    Axes: {{ counter[1] }}
+    Spears: {{ counter[2] }}
+    Shields: {{ counter[3] }}
+</div>
+
+{% for weapon in weapons %}
+
+<section>
+    <div class="each_product">
+        {% if weapon.name == "Bronze Sword" %}
+            <img src="{{url_for('static', filename='/images/bronze_sword_pic.webp')}}" align="content" class="product_picture"/>
+            
+            {% elif weapon.name == "Silver Sword" %}
+            <img src="{{url_for('static', filename='/images/silver_sword_pic.jpeg')}}" align="content" class="product_picture"/>
+            
+            {% elif weapon.name == "Gold Sword" %}
+            <img src="{{url_for('static', filename='/images/gold_sword_pic.jpeg')}}" align="content" class="product_picture"/>
+
+            {% elif weapon.name == "Bronze Axe" %}
+            <img src="{{url_for('static', filename='/images/Bronze_axe_pic.webp')}}" align="content" class="product_picture"/>
+
+            {% elif weapon.name == "Silver Axe" %}
+            <img src="{{url_for('static', filename='/images/silver_axe_pic.webp')}}" align="content" class="product_picture"/>
+
+            {% elif weapon.name == "Gold Axe" %}
+            <img src="{{url_for('static', filename='/images/gold_axe_pic.webp')}}" align="content" class="product_picture"/>
+
+            {% elif weapon.name == "Bronze Spear" %}
+            <img src="{{url_for('static', filename='/images/bronze_spear_pic.webp')}}" align="content" class="product_picture"/>
+
+            {% elif weapon.name == "Silver Spear" %}
+            <img src="{{url_for('static', filename='/images/silver_spear_pic.webp')}}" align="content" class="product_picture"/>
+
+            {% elif weapon.name == "Gold Spear" %}
+            <img src="{{url_for('static', filename='/images/gold_spear_pic.png')}}" align="content" class="product_picture"/>
+
+            {% elif weapon.name == "Shield" %}
+            <img src="{{url_for('static', filename='/images/shield_pic.jpeg')}}" align="content" class="product_picture"/>
+
+        {% endif %}
+
+        <div>Product Name: {{ weapon.name }}</div>
+        <div>Purchase Cost: {{ weapon.cost }}</div>
+        <div>Selling Price: {{ weapon.price }}</div>
+        <div>Categorie: {{ weapon.product_type.name }}</div><br>
+        <br>
+    </div>
+</section>
+{% endfor %}
+
+
+{% endblock %}

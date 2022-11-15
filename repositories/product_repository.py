@@ -49,16 +49,25 @@ def update(product):
     print(values)
     run_sql(sql, values)
 
+def select_weapons(products):
+    weapons_list = []
+    for product in products:
+        if product.product_type.name == "Weapons":
+            weapons_list.append(product)
+    return weapons_list
 
-# UPDATE products SET name = 'Health Potion', description = 'Updated Potion', cost = '500', price = '550', type_id = '44'
-# WHERE id = 64;
-
-# def product_type_counts(products):
-# product_counts_dict = {}
-#     for product in products:
-#         if product.product_type.name == "Weapons":
-#             product_counts_dict[product.product_type.name] += 1
-#         else:
-#             product_counts_dict[product.product_type.name] = 0
-    
-#     return product_counts_dict
+def count_weapons(weapons):
+    sword_count = 0
+    axe_count = 0
+    spear_count = 0
+    shield_count = 0
+    for weapon in weapons:
+        if "Sword" in weapon.name:
+            sword_count += 1
+        if "Axe" in weapon.name:
+            axe_count += 1
+        if "Spear" in weapon.name:
+            spear_count += 1
+        if "Shield" in weapon.name:
+            shield_count += 1
+    return [sword_count, axe_count, spear_count, shield_count]

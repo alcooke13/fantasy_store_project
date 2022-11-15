@@ -11,8 +11,7 @@ def products():
     weapon_counter = 0
     potion_counter = 0
     armor_counter = 0
-    products = product_repository.select_all()
-    pdb.set_trace()
+    products = product_repository.select_all()   
     for product in products:
         if product.product_type.name == "Weapons":
             weapon_counter += 1
@@ -74,3 +73,12 @@ def update_product(id):
     product_repository.update(updated_product)
     # return redirect(url_for("products.show_product", id=id))
     return redirect(f"/products/{id}")
+
+# Filter to Weapons
+@products_blueprint.route("/products/weapons")
+def show_weapons():
+
+    products = product_repository.select_all()
+    weapons = product_repository.select_weapons(products)
+    counter = product_repository.count_weapons(weapons)
+    return render_template("products/weapons.html", weapons = weapons, counter = counter)

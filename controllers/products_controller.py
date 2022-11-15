@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, request
+from flask import Blueprint, render_template, redirect, request, url_for
 import repositories.product_repository as product_repository
 import repositories.product_type_repository as product_type_repository
 from models.product import Product
@@ -40,3 +40,25 @@ def delete_product(id):
 def show_product(id):
     product = product_repository.select(id)
     return render_template("products/show.html", product = product)
+
+# Edit a product
+@products_blueprint.route("/products/<id>/edit")
+def edit_product(id):
+    product = product_repository.select(id)
+    product_types = product_type_repository.select_all()
+    return render_template("products/edit.html", product = product, product_types = product_types)
+
+# Update a product
+
+@products_blueprint.route("/products/<id>", methods=["POST"])
+def update_product(id):
+    name = request.form['product_name']
+    description = request.form['description']
+    cost = request.form['cost']
+    price = request.form['price']
+    product_type_id = request.form['type_id']
+    product_type = product_type_repository.select(product_type_id)
+    updated_product = Product(name, description, cost, price, product_type, id)
+    product_repository.update(updated_product)
+    # return redirect(url_for("products.show_product", id=id))
+    return redirect(f"/products/{id}")

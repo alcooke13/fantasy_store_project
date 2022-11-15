@@ -2,18 +2,23 @@
 {% block content %}
 
 <h2>
-    Product
+    {{ product.name }}
 </h2>
 <section>
     <div class = "single-product">
         <div class="single-product-items">
-            {{ product.name }}<br>
-            {{ product.product_type.name }}
-            <br>
-            
-            {{ product.cost }}<br>
-            {{ product.price }}<br>
-            {{ product.description }}        
+            <div>
+                <h3>{{ product.name }}<br></h3>
+                {{ product.product_type.name }}
+                <br>
+                {{ product.cost }}<br>
+                {{ product.price }}<br>
+                {{ product.description }}
+            </div>   
+                <form action="/products/{{ product.id }}/edit">
+                    <div id="edit-button">
+                        <input type="submit" value="Edit">
+                    </div>     
         </div>
         <div>
             {% if product.name == "Bronze Sword" %}
@@ -66,11 +71,11 @@
 
 
             {% endif %}
+        
         </div>
     </div>
     
 </section>
 
-
-
+</form>
 {% endblock %}

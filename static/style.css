@@ -52,3 +52,12 @@ h2 {
     height: 250px;
     width: 250px;
 }
+
+#edit-button {
+    margin-top: 1rem;
+}
+
+#edit-form {
+    display: flex;
+    justify-content: center;
+}

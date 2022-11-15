@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h2>Edit Product</h2>
+<div id="edit-form">
+    <form action="/products/{{ product.id }}" method="POST">
+        <div>
+            <label for="product_name">Product Name: </label>
+            <input type="text" id="product_name" name="product_name"><br>
+            <label for="description">Description: </label><br>
+            <textarea id="description" name="description" rows="3" cols="30"></textarea><br>
+            <label for="cost">Purchase Cost: </label>
+            <input type="text" id="cost" name="cost"><br>
+            <label for="price">Selling Price: </label>
+            <input type="text" id="price" name="price"><br>
+            <label for="type_id">Category:  </label>
+            <select name="type_id" id="type_id">
+                {% for type in product_types %}
+                <option value="{{ type.id }}">
+                    {{ type.name }}
+                </option>
+                {% endfor %}
+                <input type="submit">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

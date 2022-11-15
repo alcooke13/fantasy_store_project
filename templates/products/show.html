@@ -5,10 +5,19 @@
     Product
 </h2>
 <section>
-    <div>
-        TESTING SINGLE PAGE
-        {{product.name}}
-        {{product.description}}
+    <div class = "single-product">
+        <div class="single-product-items">
+            {{ product.name }}<br>
+            {{ product.product_type.name }}
+            <br>
+            
+            {{ product.cost }}<br>
+            {{ product.price }}<br>
+            {{ product.description }}        
+        </div>
+        <div>
+            <!-- {% for item in product %} -->
+        </div>
     </div>
     
 </section>

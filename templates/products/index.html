@@ -19,8 +19,8 @@
 
         {% endif %}
 
-        <div><a href="/products/{{product.id}}/show" >Product Name: {{ product.name }}</a></div>
-        <div>Description: {{ product.description }}</div>
+        <div><a href="/products/{{product.id}}" >Product Name: {{ product.name }}</a></div>
+        <!-- <div>Description: {{ product.description }}</div> -->
         <div>Purchase Cost: {{ product.cost }}</div>
         <div>Selling Price: {{ product.price }}</div>
         <div>Categorie: {{ product.product_type.name }}</div><br>

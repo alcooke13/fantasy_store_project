@@ -16,9 +16,10 @@ def select(id):
     sql = "SELECT * FROM products WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)
+
     if results:
         result = results[0]
-        product_type = product_type_repository.select(result["product_type_id"])
+        product_type = product_type_repository.select(result["type_id"])
         product = Product(result['name'], result['description'], result['cost'], result['price'], product_type, result["id"])
     return product
 

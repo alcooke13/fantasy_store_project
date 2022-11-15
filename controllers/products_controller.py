@@ -16,7 +16,7 @@ def new_product():
     product_types = product_type_repository.select_all()
     return render_template("products/new.html", product_types=product_types)
 
-# create new page and redirect to products page
+# Create new page and redirect to products page
 @products_blueprint.route("/products", methods=["POST"])
 def create_product():
     name = request.form['name']
@@ -36,11 +36,7 @@ def delete_product(id):
     return redirect("/products")
 
 # Show a product
-# tried /products/<id> -> Gives Key error product_type_id
-# /products/product.id -> Gives Malinformed url rule
-# tried /products/product.id - > Gives 404
-
-# @products_blueprint.route("/products/<id>/show")
-# def show_book(id):
-#     product = product_repository.select(id)
-#     return render_template("products/show.html", product = product)
+@products_blueprint.route("/products/<id>")
+def show_product(id):
+    product = product_repository.select(id)
+    return render_template("products/show.html", product = product)

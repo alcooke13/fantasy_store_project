@@ -38,3 +38,13 @@ h2 {
 #picture {
     height: 9rem;
 }
+
+.single-product {
+    text-align: center;
+    outline: 0.5rem solid black;
+    margin-left: 25rem;
+    margin-right: 25rem;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+

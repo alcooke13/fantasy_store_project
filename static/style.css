@@ -28,6 +28,10 @@ h2 {
     margin: 1rem;
     flex-direction: column;
     text-align: center;
+    margin-left: 25rem;
+    margin-right: 25rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     
 }
 
@@ -60,4 +64,10 @@ h2 {
 #edit-form {
     display: flex;
     justify-content: center;
+}
+
+.stock-level {
+    text-align: left;
+    position: fixed;
+    margin-left: 2rem;
 }

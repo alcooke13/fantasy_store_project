@@ -45,13 +45,15 @@
             <img src="{{url_for('static', filename='/images/shield_pic.jpeg')}}" align="content" class="product_picture"/>
 
         {% endif %}
-
-        <div>{{ weapon.name }}</div>
+        <div><a href="/products/{{weapon.id}}">{{ weapon.name }}</a></div>
         <div>Purchase Cost: {{ weapon.cost }}</div>
         <div>Selling Price: {{ weapon.price }}</div>
         <div>Categorie: {{ weapon.product_type.name }}</div><br>
         <br>
     </div>
+    <form action="/products/{{ weapon.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
 </section>
 {% endfor %}
 

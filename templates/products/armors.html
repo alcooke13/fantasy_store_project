@@ -21,10 +21,14 @@
             {% elif armor.name == "Heavy Armor" %}
             <img src="{{url_for('static', filename='/images/heavy_armor_pic.png')}}" align="content" class="product_picture"/>
         {% endif %}
-        <div>{{ armor.name }}</div>
+        <div><a href="/products/{{armor.id}}">{{ armor.name }}</a></div>
         <div>Purchase Cost: {{ armor.cost }}</div>
         <div>Selling Price: {{ armor.price }}</div>
         <div>Categorie: {{ armor.product_type.name }}</div><br>
+        
+        <form action="/products/{{ armor.id }}/delete" method="POST">
+            <input type="submit" value="Delete">
+        </form>
 
         {% endfor %}
      </div>

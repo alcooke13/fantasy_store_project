@@ -21,11 +21,13 @@
             {% elif potion.name == "Strength Potion" %}
             <img src="{{url_for('static', filename='/images/strength_potion_pic.png')}}" align="content" class="product_picture"/>
         {% endif %}
-        <div>{{ potion.name }}</div>
+        <div><a href="/products/{{potion.id}}">{{ potion.name }}</a></div>
         <div>Purchase Cost: {{ potion.cost }}</div>
         <div>Selling Price: {{ potion.price }}</div>
         <div>Categorie: {{ potion.product_type.name }}</div><br>
-
+        <form action="/products/{{ potion.id }}/delete" method="POST">
+            <input type="submit" value="Delete">
+        </form>
         {% endfor %}
      </div>
 

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <div>STOCK LEVEL: <br>
+    Light Armor Set: {{ counter[0] }}<br>
+    Medium Armor Set: {{ counter[1] }}<br>
+    Heavy Armor Set: {{ counter[2] }}<br>
+    </div>
+    
+
+    <div class="each_product">
+        {% for armor in armors %}
+
+        {% if armor.name == "Light Armor" %}
+        <img src="{{url_for('static', filename='/images/light_armor_pic.png')}}" align="content" class="product_picture"/>
+            
+            {% elif armor.name == "Medium Armor" %}
+            <img src="{{url_for('static', filename='/images/medium_armor_pic.png')}}" align="content" class="product_picture"/>
+
+            {% elif armor.name == "Heavy Armor" %}
+            <img src="{{url_for('static', filename='/images/heavy_armor_pic.png')}}" align="content" class="product_picture"/>
+        {% endif %}
+        <div>{{ armor.name }}</div>
+        <div>Purchase Cost: {{ armor.cost }}</div>
+        <div>Selling Price: {{ armor.price }}</div>
+        <div>Categorie: {{ armor.product_type.name }}</div><br>
+
+        {% endfor %}
+     </div>
+
+
+</section>
+
+{% endblock %}

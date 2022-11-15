@@ -91,3 +91,12 @@ def show_potions():
     counter = product_repository.count_potions(potions)
     # counter returns a list of numbers in the order of health, mana, strength
     return render_template("/products/potions.html", potions = potions, counter = counter)
+
+# Filter to Armors
+@products_blueprint.route("/products/armors")
+def show_armors():
+    products = product_repository.select_all()
+    armors = product_repository.select_armor(products)
+    counter = product_repository.count_armor(armors)
+    # counter returns a list of numbers in the order of light, medium, heavy
+    return render_template("/products/armors.html", armors = armors, counter = counter)

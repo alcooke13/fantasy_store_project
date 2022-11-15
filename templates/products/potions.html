@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <div>STOCK LEVEL: <br>
+    Health Potions: {{ counter[0] }}<br>
+    Mana Potions: {{ counter[1] }}<br>
+    Strength Potions: {{ counter[2] }}<br>
+    </div>
+    
+
+    <div class="each_product">
+        {% for potion in potions %}
+
+        {% if potion.name == "Health Potion" %}
+            <img src="{{url_for('static', filename='/images/health_potion_pic.png')}}" align="content" class="product_picture"/>
+            
+            {% elif potion.name == "Mana Potion" %}
+            <img src="{{url_for('static', filename='/images/mana_potion_pic.png')}}" align="content" class="product_picture"/>
+
+            {% elif potion.name == "Strength Potion" %}
+            <img src="{{url_for('static', filename='/images/strength_potion_pic.png')}}" align="content" class="product_picture"/>
+        {% endif %}
+        <div>Product Name: {{ potion.name }}</div>
+        <div>Purchase Cost: {{ potion.cost }}</div>
+        <div>Selling Price: {{ potion.price }}</div>
+        <div>Categorie: {{ potion.product_type.name }}</div><br>
+
+        {% endfor %}
+     </div>
+
+
+</section>
+
+{% endblock %}

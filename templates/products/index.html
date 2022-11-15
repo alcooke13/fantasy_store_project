@@ -2,8 +2,17 @@
 
 {% block content %}
 
+<div id="myBtnContainer" align="right">
+    <button class="btn active" onclick="filterSelection('all')">Show all</button>
+    <button class="btn" onclick="filterSelection('Weapons')">Weapons</button>
+    <button class="btn" onclick="filterSelection('Potions')">Potions</button>
+    <button class="btn" onclick="filterSelection('Armor')"> Armor</button>
+  </div>
+    
 <h2>List of Products</h2>
-
+Weapon Quantity: {{ weapon_counter }} <br>
+Potion Quantity: {{ potion_counter }} <br>
+Armor Quantity: {{ armor_counter }} <br>
 {% for product in products %}
 
 <section>

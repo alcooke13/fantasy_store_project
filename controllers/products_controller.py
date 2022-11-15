@@ -3,12 +3,24 @@ import repositories.product_repository as product_repository
 import repositories.product_type_repository as product_type_repository
 from models.product import Product
 products_blueprint = Blueprint("products", __name__)
+import pdb
 
 # Lists all products
 @products_blueprint.route("/products")
 def products():
+    weapon_counter = 0
+    potion_counter = 0
+    armor_counter = 0
     products = product_repository.select_all()
-    return render_template("products/index.html", products=products)
+    pdb.set_trace()
+    for product in products:
+        if product.product_type.name == "Weapons":
+            weapon_counter += 1
+        if product.product_type.name == "Potions":
+            potion_counter += 1
+        if product.product_type.name == "Armor":
+            armor_counter += 1
+    return render_template("products/index.html", products=products, weapon_counter = weapon_counter, potion_counter=potion_counter, armor_counter=armor_counter)
 
 # Page to add new product
 @products_blueprint.route("/products/new")

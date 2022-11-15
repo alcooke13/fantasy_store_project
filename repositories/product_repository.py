@@ -52,3 +52,13 @@ def update(product):
 
 # UPDATE products SET name = 'Health Potion', description = 'Updated Potion', cost = '500', price = '550', type_id = '44'
 # WHERE id = 64;
+
+# def product_type_counts(products):
+# product_counts_dict = {}
+#     for product in products:
+#         if product.product_type.name == "Weapons":
+#             product_counts_dict[product.product_type.name] += 1
+#         else:
+#             product_counts_dict[product.product_type.name] = 0
+    
+#     return product_counts_dict

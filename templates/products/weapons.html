@@ -8,12 +8,12 @@
     <div class="stock-level">STOCK LEVEL: <br>
         <div id ="stock-indicator">
             <span style="color:green">Enough Stock</span><br>
-            <span style="color:orange">Low Stock</span><br>
+            <span style="color:red">Low Stock</span><br>
         </div>
         {% if counter[0] >= 10 %}
         <p><span style="color:green">Swords: {{ counter[0] }}</p></span>
         {% elif counter[0] < 10 and counter[0] > 0  %}
-        <p><span style="color:orange">Swords: {{ counter[0] }}</p></span>
+        <p><span style="color:red">Swords: {{ counter[0] }}</p></span>
         {% else %}
         <p><span style="color:grey">Swords: Out Of Stock</p>
         {% endif %}
@@ -21,7 +21,7 @@
         {% if counter[1] >= 10%}
         <p><span style="color:green">Axes: {{ counter[1] }}</p>
         {% elif counter[1] < 10 and counter[1] > 0  %}
-        <p><span style="color:orange">Axes: {{ counter[1] }}</p>
+        <p><span style="color:red">Axes: {{ counter[1] }}</p>
         {% else %}
         <p><span style="color:grey">Axes: Out Of Stock</p>
         {% endif %}
@@ -29,7 +29,7 @@
         {% if counter[2] >= 10 %}
         <p><span style="color:green">Spears: {{ counter[2] }}</p>
         {% elif counter[2] < 10 and counter[2] > 0  %}
-        <p><span style="color:orange">Spears: {{ counter[2] }}</p>
+        <p><span style="color:red">Spears: {{ counter[2] }}</p>
         {% else %}
         <p><span style="color:grey">Spears: Out Of Stock</p>
         {% endif %}
@@ -37,11 +37,17 @@
         {% if counter[3] >= 10 %}
         <p><span style="color:green">Shields: {{ counter[3] }}</p>
         {% elif counter[3] < 10 and counter[3] > 0  %}
-        <p><span style="color:orange">Shields: {{ counter[3] }}</p>
+        <p><span style="color:red">Shields: {{ counter[3] }}</p>
         {% else %}
         <p><span style="color:grey">Shields: Out Of Stock</p>
         {% endif %}
     </div>
+    <div class="option-filter">
+        <a href="/products"><input type=button value='Show All'></a>
+        <a href="/products/weapons"><input type=button value='Weapons'></a>
+        <a href="/products/potions"><input type=button value='Potions'></a>
+        <a href="/products/armors"><input type=button value='Armors'></a>
+      </div>
 
 {% for weapon in weapons %}
 

@@ -1,16 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div class="option-filter">
+    <a href="/products"><input type=button value='Show All'></a>
+    <a href="/products/weapons"><input type=button value='Weapons'></a>
+    <a href="/products/potions"><input type=button value='Potions'></a>
+    <a href="/products/armors"><input type=button value='Armors'></a>
+</div>
 <div class="stock-level">STOCK LEVEL: <br>
     <div id ="stock-indicator">
         <span style="color:green">Enough Stock</span><br>
-        <span style="color:orange">Low Stock</span><br>
+        <span style="color:red">Low Stock</span><br>
     </div>
     {% if counter[0] >= 5%}
     <p><span style="color:green">Health Potion: {{ counter[0] }}</p>
     {% elif counter[0] < 5 and counter[0] > 0  %}
-    <p><span style="color:orange">Health Potion: {{ counter[0] }}</p>
+    <p><span style="color:red">Health Potion: {{ counter[0] }}</p>
     {% else %}
     <p><span style="color:grey">Health Potion: Out Of Stock</p>
     {% endif %}
@@ -18,7 +23,7 @@
     {% if counter[1] >= 5%}
     <p><span style="color:green">Mana Potions: {{ counter[1] }}</p>
     {% elif counter[1] < 5 and counter[1] > 0  %}
-    <p><span style="color:orange">Mana Potions: {{ counter[1] }}</p>
+    <p><span style="color:red">Mana Potions: {{ counter[1] }}</p>
     {% else %}
     <p><span style="color:grey">Mana Potions: Out Of Stock</p>
     {% endif %}
@@ -26,7 +31,7 @@
     {% if counter[2] >= 5 %}
     <p><span style="color:green">Strength Potions: {{ counter[2] }}</p>
     {% elif counter[2] < 5 and counter[2] > 0  %}
-    <p><span style="color:orange">Health Potion: {{ counter[2] }}</p>
+    <p><span style="color:red">Health Potion: {{ counter[2] }}</p>
     {% else %}
     <p><span style="color:grey">Health Potion: Out Of Stock</p>
     {% endif %}

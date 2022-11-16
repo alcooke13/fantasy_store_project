@@ -1,22 +1,43 @@
 h1 {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    background-color: rgb(244, 234, 219);
+    padding: 1.5rem;
+    margin-top: 0;
+    outline: rebeccapurple solid 12px;
+    color: black;
+    margin-bottom: 0;
+}
+
+body {
+    background-color:rgb(199, 161, 199);
+    background-image: url("images/store_pic.png");
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: white;
 }
 
 nav > ul{
+    margin-top: 0;
     display: flex;
-    justify-content: flex-start;
-    outline: red solid 2px;
+    justify-content: center;
     gap: 1rem;
+    padding: 1.5rem;
+    background-color:rgb(239, 205, 155);
+    
 }
 
 nav > ul > li {
     list-style: none;
+    
 }
 
 nav > ul > li > a {
     text-decoration: none;
     color: black;
+    
 }
 
 h2 {
@@ -24,7 +45,7 @@ h2 {
 }
 
 .each_product {
-    outline: 2px solid blue;
+    outline: 4px solid black;
     margin: 1rem;
     flex-direction: column;
     text-align: center;
@@ -33,11 +54,18 @@ h2 {
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 2rem;
+    background-color: rgb(244, 234, 219);
+    color: black;
 }
 
 #new_product {
-    outline: 2px solid green;
+    outline: 4px solid black;
     text-align: center;
+    background-color:rgb(244, 234, 219);
+    color: black;
+    margin-left: 25rem;
+    margin-right: 25rem;
+    padding: 1rem;
 }
 #picture_all {
     height: 9rem;
@@ -45,11 +73,12 @@ h2 {
 
 .single-product {
     text-align: center;
-    outline: 0.5rem solid black;
+    outline: 4px solid black;
     margin-left: 25rem;
     margin-right: 25rem;
     padding: 2rem;
     margin-top: 3rem;
+    background-color: rgb(244, 234, 219)
 }
 
 .product_picture {
@@ -67,7 +96,30 @@ h2 {
 }
 
 .stock-level {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
     position: fixed;
     margin-left: 2rem;
+    outline: black 2px solid;
+    padding: 1rem;
+    background-color: rgb(244, 234, 219);
+    color: black;
+}
+
+.option-filter {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    outline: black 2px solid;
+    padding: 1rem;
+    background-color: rgb(244, 234, 219);
+    margin-left: 70rem;
+    position: fixed;
+    margin-right: 3rem;
+    
+}
+#homepage {
+    display: flex;
+    flex-direction: column;
 }

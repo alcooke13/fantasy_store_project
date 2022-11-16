@@ -49,11 +49,13 @@
         <div>Purchase Cost: {{ armor.cost }}</div>
         <div>Selling Price: {{ armor.price }}</div>
         <div>Category: {{ armor.product_type.name }}</div><br>
+        {% set markup = (((armor.price - armor.cost)/ armor.cost) * 100)| int %}
+        <div>Markup: {{markup}}% </div>
         
         <form action="/products/{{ armor.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
-
+        
         
      </div>
 

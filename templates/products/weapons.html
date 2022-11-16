@@ -1,14 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div class="stock-level">
-    STOCK LEVEL: <br>
-    Swords: {{ counter[0] }}<br>
+ <!-- Swords: {{ counter[0] }}<br>
     Axes: {{ counter[1] }}<br>
     Spears: {{ counter[2] }}<br>
-    Shields: {{ counter[3] }}<br>
-</div>
+    Shields: {{ counter[3] }}<br> -->
+    <div class="stock-level">STOCK LEVEL: <br>
+        <div id ="stock-indicator">
+            <span style="color:green">Enough Stock</span><br>
+            <span style="color:orange">Low Stock</span><br>
+        </div>
+        {% if counter[0] >= 10 %}
+        <p><span style="color:green">Swords: {{ counter[0] }}</p></span>
+        {% elif counter[0] < 10 and counter[0] > 0  %}
+        <p><span style="color:orange">Swords: {{ counter[0] }}</p></span>
+        {% else %}
+        <p><span style="color:grey">Swords: Out Of Stock</p>
+        {% endif %}
+        
+        {% if counter[1] >= 10%}
+        <p><span style="color:green">Axes: {{ counter[1] }}</p>
+        {% elif counter[1] < 10 and counter[1] > 0  %}
+        <p><span style="color:orange">Axes: {{ counter[1] }}</p>
+        {% else %}
+        <p><span style="color:grey">Axes: Out Of Stock</p>
+        {% endif %}
+    
+        {% if counter[2] >= 10 %}
+        <p><span style="color:green">Spears: {{ counter[2] }}</p>
+        {% elif counter[2] < 10 and counter[2] > 0  %}
+        <p><span style="color:orange">Spears: {{ counter[2] }}</p>
+        {% else %}
+        <p><span style="color:grey">Spears: Out Of Stock</p>
+        {% endif %}
+
+        {% if counter[3] >= 10 %}
+        <p><span style="color:green">Shields: {{ counter[3] }}</p>
+        {% elif counter[3] < 10 and counter[3] > 0  %}
+        <p><span style="color:orange">Shields: {{ counter[3] }}</p>
+        {% else %}
+        <p><span style="color:grey">Shields: Out Of Stock</p>
+        {% endif %}
+    </div>
 
 {% for weapon in weapons %}
 

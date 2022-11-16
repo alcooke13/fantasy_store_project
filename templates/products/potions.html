@@ -7,10 +7,12 @@
         <span style="color:green">Enough Stock</span><br>
         <span style="color:orange">Low Stock</span><br>
     </div>
-    {% if counter[0] >= 5 %}
-    <p><span style="color:green">Health Potions: {{ counter[0] }}</p></span>
+    {% if counter[0] >= 5%}
+    <p><span style="color:green">Health Potion: {{ counter[0] }}</p>
+    {% elif counter[0] < 5 and counter[0] > 0  %}
+    <p><span style="color:orange">Health Potion: {{ counter[0] }}</p>
     {% else %}
-    <p><span style="color:orange">Health Potions: {{ counter[0] }}</p></span>
+    <p><span style="color:grey">Health Potion: Out Of Stock</p>
     {% endif %}
     
     {% if counter[1] >= 5%}
@@ -23,8 +25,10 @@
 
     {% if counter[2] >= 5 %}
     <p><span style="color:green">Strength Potions: {{ counter[2] }}</p>
+    {% elif counter[2] < 5 and counter[2] > 0  %}
+    <p><span style="color:orange">Health Potion: {{ counter[2] }}</p>
     {% else %}
-    p><span style="color:orange">Strength Potions: {{ counter[2] }}</p>
+    <p><span style="color:grey">Health Potion: Out Of Stock</p>
     {% endif %}
     
 </div>

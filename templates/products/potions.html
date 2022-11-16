@@ -1,11 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <div class="stock-level">STOCK LEVEL: <br>
-    Health Potions: {{ counter[0] }}<br>
-    Mana Potions: {{ counter[1] }}<br>
-    Strength Potions: {{ counter[2] }}<br>
+    <div id ="stock-indicator">
+        <span style="color:green">Enough Stock</span><br>
+        <span style="color:orange">Low Stock</span><br>
+    </div>
+    {% if counter[0] >= 5 %}
+    <p><span style="color:green">Health Potions: {{ counter[0] }}</p></span>
+    {% else %}
+    <p><span style="color:orange">Health Potions: {{ counter[0] }}</p></span>
+    {% endif %}
+    
+    {% if counter[1] >= 5%}
+    <p><span style="color:green">Mana Potions: {{ counter[1] }}</p>
+    {% elif counter[1] < 5 and counter[1] > 0  %}
+    <p><span style="color:orange">Mana Potions: {{ counter[1] }}</p>
+    {% else %}
+    <p><span style="color:grey">Mana Potions: Out Of Stock</p>
+    {% endif %}
+
+    {% if counter[2] >= 5 %}
+    <p><span style="color:green">Strength Potions: {{ counter[2] }}</p>
+    {% else %}
+    p><span style="color:orange">Strength Potions: {{ counter[2] }}</p>
+    {% endif %}
+    
 </div>
+
 {% for potion in potions %}
 <section>
     <div class="each_product">

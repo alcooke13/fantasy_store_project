@@ -3,7 +3,7 @@ Fantasy store inventory
 Build an app which allows a shopkeeper to track their shop's inventory. This is not an app which the customer will see, it is an admin/management app for the shop workers.
 
 MVP
-The inventory should track individual products, including a name, description, stock quantity, buying cost, and selling price.
+The inventory should track individual products, including a name, description, stock quantity, buying cost, and selling price. *
 
 o	PRODUCTS
 -	Weapons:

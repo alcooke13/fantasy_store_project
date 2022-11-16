@@ -3,12 +3,36 @@
 {% block content %}
 
 <div class="stock-level">STOCK LEVEL: <br>
-    Light Armor Set: {{ counter[0] }}<br>
-    Medium Armor Set: {{ counter[1] }}<br>
-    Heavy Armor Set: {{ counter[2] }}<br>
+    <div id ="stock-indicator">
+        <span style="color:green">Enough Stock</span><br>
+        <span style="color:orange">Low Stock</span><br>
     </div>
-{% for armor in armors %}
+    {% if counter[0] >= 5 %}
+    <p><span style="color:green">Light Armor: {{ counter[0] }}</p></span>
+    {% elif counter[0] < 5 and counter[0] > 0  %}
+    <p><span style="color:orange">Light Armor: {{ counter[0] }}</p></span>
+    {% else %}
+    <p><span style="color:grey">Light Armor: Out Of Stock</p>
+    {% endif %}
+    
+    {% if counter[1] >= 5%}
+    <p><span style="color:green">Medium Armor: {{ counter[1] }}</p>
+    {% elif counter[1] < 5 and counter[1] > 0  %}
+    <p><span style="color:orange">Medium Armor {{ counter[1] }}</p>
+    {% else %}
+    <p><span style="color:grey">Medium Armor: Out Of Stock</p>
+    {% endif %}
 
+    {% if counter[2] >= 5 %}
+    <p><span style="color:green">Heavy Armor: {{ counter[2] }}</p>
+    {% elif counter[2] < 5 and counter[1] > 0  %}
+    <p><span style="color:orange">Heavy Armor {{ counter[2] }}</p>
+    {% else %}
+    <p><span style="color:grey">Heavy Armor: Out Of Stock</p>
+    {% endif %}
+    
+</div>
+{% for armor in armors %}
 <section>
      <div class="each_product">
         

@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
- <!-- Swords: {{ counter[0] }}<br>
-    Axes: {{ counter[1] }}<br>
-    Spears: {{ counter[2] }}<br>
-    Shields: {{ counter[3] }}<br> -->
     <div class="stock-level">STOCK LEVEL: <br>
         <div id ="stock-indicator">
             <span style="color:green">Enough Stock</span><br>
@@ -57,10 +53,10 @@
             <img src="{{url_for('static', filename='/images/bronze_sword_pic.webp')}}" align="content" class="product_picture"/>
             
             {% elif weapon.name == "Silver Sword" %}
-            <img src="{{url_for('static', filename='/images/silver_sword_pic.jpeg')}}" align="content" class="product_picture"/>
+            <img src="{{url_for('static', filename='/images/silver_sword_pic.png')}}" align="content" class="product_picture"/>
             
             {% elif weapon.name == "Gold Sword" %}
-            <img src="{{url_for('static', filename='/images/gold_sword_pic.jpeg')}}" align="content" class="product_picture"/>
+            <img src="{{url_for('static', filename='/images/gold_sword_pic.png')}}" align="content" class="product_picture"/>
 
             {% elif weapon.name == "Bronze Axe" %}
             <img src="{{url_for('static', filename='/images/Bronze_axe_pic.webp')}}" align="content" class="product_picture"/>
@@ -81,7 +77,7 @@
             <img src="{{url_for('static', filename='/images/gold_spear_pic.png')}}" align="content" class="product_picture"/>
 
             {% elif weapon.name == "Shield" %}
-            <img src="{{url_for('static', filename='/images/shield_pic.jpeg')}}" align="content" class="product_picture"/>
+            <img src="{{url_for('static', filename='/images/shield_pic.png')}}" align="content" class="product_picture"/>
 
         {% endif %}
         <div><a href="/products/{{weapon.id}}">{{ weapon.name }}</a></div>

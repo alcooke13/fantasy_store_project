@@ -10,7 +10,9 @@
                 <br>
                 Cost: {{ product.cost }}<br>
                 Price: {{ product.price }}<br>
-                Description: {{ product.description }}
+                Description: {{ product.description }}<br>
+                {% set markup = (((product.price - product.cost)/ product.cost) * 100)| int %}
+                Markup: {{ markup }}%
             </div>   
                 <form action="/products/{{ product.id }}/edit">
                     <div id="edit-button">

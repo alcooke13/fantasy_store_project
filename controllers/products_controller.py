@@ -73,30 +73,3 @@ def update_product(id):
     product_repository.update(updated_product)
     # return redirect(url_for("products.show_product", id=id))
     return redirect(f"/products/{id}")
-
-# Filter to Weapons
-@products_blueprint.route("/products/weapons")
-def show_weapons():
-    products = product_repository.select_all()
-    weapons = product_repository.select_weapons(products)
-    counter = product_repository.count_weapons(weapons)
-    #counter returns a list of numbers in the order of sword, axe, spear, shield
-    return render_template("products/weapons.html", weapons = weapons, counter = counter)
-
-# Filter to Potions
-@products_blueprint.route("/products/potions")
-def show_potions():
-    products = product_repository.select_all()
-    potions = product_repository.select_potions(products)
-    counter = product_repository.count_potions(potions)
-    # counter returns a list of numbers in the order of health, mana, strength
-    return render_template("/products/potions.html", potions = potions, counter = counter)
-
-# Filter to Armors
-@products_blueprint.route("/products/armors")
-def show_armors():
-    products = product_repository.select_all()
-    armors = product_repository.select_armor(products)
-    counter = product_repository.count_armor(armors)
-    # counter returns a list of numbers in the order of light, medium, heavy
-    return render_template("/products/armors.html", armors = armors, counter = counter)
